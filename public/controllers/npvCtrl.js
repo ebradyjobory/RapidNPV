@@ -31,7 +31,12 @@ function NpvCtrl ($scope, $http){
 
     var npvValue = npvFunction(Number(rate), Number(cf0), Number(cf1), Number(cf2), Number(cf3));
     var npvValueToMoney = npvValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
-    var message = 'The Net Present Value (NPV) is $'+npvValueToMoney;
+    if (npvValueToMoney < 0) {
+      npvValueToMoney = -npvValueToMoney;
+      var message = 'The Net Present Value (NPV) is <strong>-$'+npvValueToMoney+'</strong>.';  
+    } else {
+      var message = 'The Net Present Value (NPV) is <strong>$'+npvValueToMoney+'</strong>.';  
+    }
     
     $('#results').html(message);
 
@@ -42,7 +47,7 @@ function NpvCtrl ($scope, $http){
     } else if (npvValue === 0) {
       $('#status').removeClass('alert alert-danger');
       $('#status').removeClass('alert alert-success');
-      $('#status').html('It\'s worth it! \n The investment earns a rate of return equal to the discount rate').addClass('alert alert-warning');
+      $('#status').html('It\'s worth it! \n The investment earns a rate of return equal to the discount rate.').addClass('alert alert-warning');
     } else {
       $('#status').removeClass('alert alert-caution');
       $('#status').removeClass('alert alert-success');

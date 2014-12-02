@@ -17,6 +17,10 @@ th {
   background-color: #e74c3c;
 }
 
+thead {
+  border-bottom: none !important;
+}
+
 td:before {
   content: '$';
   color: black;
@@ -34,6 +38,7 @@ td:nth-child(1):before {
   margin: auto;
   margin-top: 50px;
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .container p {
