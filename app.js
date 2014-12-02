@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 
 var app = express();
 
@@ -23,7 +22,23 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+
+
+app.get('/', function (req, res) {
+  render('index')
+});
+
+app.get('/npvs', function (req, res) {
+  res.send([]);
+});
+
+app.post('/npvs', function (req, res) {
+  // db.npvs.insert(req.body, function(err, data){
+  //   console.log(data);
+  //   res.end(JSON.stringify(data));
+  // }); 
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
