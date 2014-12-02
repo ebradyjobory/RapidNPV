@@ -2,9 +2,12 @@ angular.module('RapidNPV', []);
 
 function NpvCtrl ($scope, $http){
 
+
   $scope.submitForm = function(isValid) {
     console.log('called from submitForm', isValid) 
   };
+
+  $scope.regExp = /[0-9]/;
   
   // the NPV function
   var npvFunction = function (rate, cf0) {
@@ -28,22 +31,23 @@ function NpvCtrl ($scope, $http){
 
     var npvValue = npvFunction(Number(rate), Number(cf0), Number(cf1), Number(cf2), Number(cf3));
     var npvValueToMoney = npvValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
-    var message = 'The Net Present Value (NPV) is $'+npvValueToMoney+'.' ;
+    var message = 'The Net Present Value (NPV) is $'+npvValueToMoney;
     
     $('#results').html(message);
 
     if (npvValue > 0) {
       $('#status').removeClass('alert alert-caution');
       $('#status').removeClass('alert alert-danger');
-      $('#status').html('Worth It!').addClass('alert alert-success');
+      $('#status').html('It\'s worth it!').addClass('alert alert-success');
     } else if (npvValue === 0) {
       $('#status').removeClass('alert alert-danger');
       $('#status').removeClass('alert alert-success');
-      $('#status').html('Worth It! \n The investment earns a rate of return equal to the discount rate').addClass('alert alert-warning');
+      $('#status').html('It\'s worth it! \n The investment earns a rate of return equal to the discount rate').addClass('alert alert-warning');
     } else {
       $('#status').removeClass('alert alert-caution');
       $('#status').removeClass('alert alert-success');
-      $('#status').html('Not Worth It!').addClass('alert alert-danger');
+      $('#status').html('Not worth it!').addClass('alert alert-danger');
+      $('body').addClass('.filter');
     }
   };
 

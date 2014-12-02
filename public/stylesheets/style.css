@@ -1,14 +1,25 @@
 body {
-  font-family: 'Droid Serif', serif; 
-  background-color: #ECECEC;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300; 
+  color: #ecf0f1;
+  background-image: url('https://s3.amazonaws.com/rapidnpv/mountain-1.jpg');
+  background-repeat: no-repeat;
+  background-size: auto auto;
 }
 
 th {
   padding-left: 30px !important;
+  font-weight: 300;
+}
+
+.filter {
+  opacity: 0.4;
+  background-color: #e74c3c;
 }
 
 td:before {
   content: '$';
+  color: black;
   position: absolute;
   margin-top: 7px;
   margin-left: 5px;
@@ -25,9 +36,14 @@ td:nth-child(1):before {
   margin-bottom: 50px;
 }
 
+.container p {
+  font-size: 1.1em;
+  margin-top: -10px;
+  margin-bottom: 50px;
+}
+
 .logo {
   margin-top: 50px;
-  margin-bottom: 50px;
 }
 
 button{
@@ -41,6 +57,7 @@ button{
   width: 50%;
   margin: auto;
   text-align: center;
+  font-size: 1.4em;
 }
 
 .form-control {

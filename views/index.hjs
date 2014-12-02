@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>RapidNPV</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="javascripts/angular/angular.js"></script>
     <script src="controllers/npvCtrl.js"></script>
@@ -13,32 +13,32 @@
   <body>
     <div class='container' ng-app='RapidNPV'>
       <h1 class="logo">RapidNPV</h1>
-      <p>Please fill out the information below to evaluate your investment</p>
+      <p>Put a nail in spreadsheet's coffin.</p>
 
       <div ng-controller="NpvCtrl">
-      <form name="npvForm" ng-submit="submitForm(npvForm.$valid)" >
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Discount Rate %</th>
-              <th>Cash Flow Year 0</th>
-              <th>Cash Flow Year 1</th>
-              <th>Cash Flow Year 2</th>
-              <th>Cash Flow Year 3</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><input type="number" placeholder="e.g, 10 for 10%" class="form-control" ng-model="npv.rate" required></td>
-              <td><input type="number" placeholder=" always negative" class="form-control" ng-model="npv.cf0" required></td>
-              <td><input type="number" class="form-control" ng-model="npv.cf1" required></td>
-              <td><input type="number" class="form-control" ng-model="npv.cf2" required></td>
-              <td><input type="number" class="form-control" ng-model="npv.cf3" required></td>
-            </tr> 
-          </tbody>
-        </table>  
-        <button type="submit" class="btn btn-primary submit" ng-click="calculateNPV()" ng-disabled="npvForm.$invalid">Is it worth it?</button>
-      </form>
+        <form name="npvForm" ng-submit="submitForm(npvForm.$valid)" >
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Discount Rate %</th>
+                <th>Initial Investment</th>
+                <th>Cash Flow Year 1</th>
+                <th>Cash Flow Year 2</th>
+                <th>Cash Flow Year 3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="number" placeholder="e.g, 10 for 10%" class="form-control" ng-pattern="regExp" ng-model="npv.rate" required></td>
+                <td><input type="number" placeholder=" always negative" class="form-control" ng-model="npv.cf0" required></td>
+                <td><input type="number" class="form-control" ng-model="npv.cf1" required></td>
+                <td><input type="number" class="form-control" ng-model="npv.cf2" required></td>
+                <td><input type="number" class="form-control" ng-model="npv.cf3" required></td>
+              </tr> 
+            </tbody>
+          </table>  
+          <button type="submit" class="btn btn-primary submit" ng-click="calculateNPV()" ng-disabled="npvForm.$invalid">Is it worth it?</button>
+        </form>
       </div> <!-- NpvCtrl -->
       <div id="results"></div>
       <div id="status"></div>
