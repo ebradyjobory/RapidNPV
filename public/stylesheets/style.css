@@ -1,8 +1,48 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Droid Serif', serif; 
+  background-color: #ECECEC;
 }
 
-a {
-  color: #00B7FF;
+th {
+  padding-left: 30px !important;
+}
+
+td:before {
+  content: '$';
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 5px;
+}
+td:nth-child(1):before {
+  content: '' !important;
+}
+
+#results {
+  font-size: 1.2em;
+  width: 50%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.logo {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+button{
+  width: 50%;
+  margin: auto 25%;
+  border-radius: 0px !important;
+}
+
+#status {
+  margin-top: 10%;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.form-control {
+  width: 80% !important;
 }
