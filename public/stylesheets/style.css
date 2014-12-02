@@ -46,3 +46,9 @@ button{
 .form-control {
   width: 80% !important;
 }
+
+.error {
+  border: red solid 4px;
+  padding: 10px;
+  margin: 0 10px;
+}
