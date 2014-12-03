@@ -43,7 +43,11 @@
       </div> <!-- NpvCtrl -->
       <div id="results"></div>
       <div id="status"></div>
-      <div class="author"><a href="essam.io">essam.io</a></div>
+      <div class="about">
+      <!--   <p>An easy to understand Net Present Value (NPV) calculator for businesses and investors without the need for a complicated spreadsheet. RapidNPV instantly assesses the profitability of a potential project or investment. Three inputs are provided: costs, benefits, and the discount rate which can be adjusted for level of risk.</p> -->
+  
+      </div>
+      <div class="author"><a href="http://essam.io">essam.io</a></div>
     </div>
   </body>
 </html>

@@ -104,9 +104,11 @@ th {
   padding-left: 30px !important;
   font-weight: 300;
   font-size: 1.1em;
-  color: #D2D7D3;
 }
 
+.about p {
+  margin-bottom: -50px;
+}
 td {
   border-top: none !important;
 }
@@ -161,14 +163,20 @@ td:nth-child(1):before {
   text-shadow: 0px 1px rgba(26, 188, 156,0.6);
 }
 
-a{
+.author a {
   color: #ecf0f1;
 }
-a:hover{
+.author a:hover, .author a:visited{
   color: #ecf0f1;
+  text-decoration: none !important;
 }
+
 .author {
   margin-top: 350px;
+}
+
+.about a{
+  margin-bottom: -890px;
 }
 
 button{
