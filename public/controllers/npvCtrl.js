@@ -1,7 +1,19 @@
 angular.module('RapidNPV', []);
 
 function NpvCtrl ($scope, $http){
-
+  
+  $scope.isItNegative = function(){
+    if ($scope.npv.cf0 > 0) {
+      console.log("should be negative");
+      $("input[type='number']:focus").addClass('inputError');
+      $('.negativeInputMsg').show();
+    }
+    if ($scope.npv.cf0 < 0) {
+      $('.negativeInputMsg').hide();
+      console.log("should be negative");
+      $("input[type='number']:focus").removeClass('inputError');
+    }
+  }
 
   $scope.submitForm = function(isValid) {
     console.log('called from submitForm', isValid) 
@@ -43,15 +55,15 @@ function NpvCtrl ($scope, $http){
     if (npvValue > 0) {
       $('#status').removeClass('alert alert-caution');
       $('#status').removeClass('alert alert-danger');
-      $('#status').html('It\'s worth it!').addClass('alert alert-success');
+      $('#status').html('Yes, it\'s worth it!').addClass('alert alert-success');
     } else if (npvValue === 0) {
       $('#status').removeClass('alert alert-danger');
       $('#status').removeClass('alert alert-success');
-      $('#status').html('It\'s worth it! \n The investment earns a rate of return equal to the discount rate.').addClass('alert alert-warning');
+      $('#status').html('Yes, it\'s worth it! \n The investment earns a rate of return equal to the discount rate.').addClass('alert alert-warning');
     } else {
       $('#status').removeClass('alert alert-caution');
       $('#status').removeClass('alert alert-success');
-      $('#status').html('Not worth it!').addClass('alert alert-danger');
+      $('#status').html('No, it\'s not worth it!').addClass('alert alert-danger');
       $('body').addClass('.filter');
     }
   };

@@ -30,14 +30,15 @@
             <tbody>
               <tr>
                 <td><input type="number" placeholder="e.g, 10 for 10%" class="form-control" ng-pattern="regExp" ng-model="npv.rate" required></td>
-                <td><input type="number" placeholder=" always negative" class="form-control" ng-model="npv.cf0" required></td>
+                <td><input ng-keyup="isItNegative()" ng-keydown="isItNegative()" type="number" placeholder=" always negative" class="form-control" ng-model="npv.cf0" required></td>
+                <span class="negativeInputMsg"><em>Negative value required</em></span>
                 <td><input type="number" class="form-control" ng-model="npv.cf1" required></td>
                 <td><input type="number" class="form-control" ng-model="npv.cf2" required></td>
                 <td><input type="number" class="form-control" ng-model="npv.cf3" required></td>
               </tr> 
             </tbody>
           </table>  
-          <button type="submit" class="btn btn-primary submit" ng-click="calculateNPV()" ng-disabled="npvForm.$invalid">Is it worth it?</button>
+          <button type="submit" class="submit" ng-click="calculateNPV()" ng-hide="npvForm.$invalid">Is it worth it?</button>
         </form>
       </div> <!-- NpvCtrl -->
       <div id="results"></div>
