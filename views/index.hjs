@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class='container' ng-app='RapidNPV'>
-      <h1 class="logo">RapidNPV</h1>
+      <h1 class="logo">Rapid<span>NPV</span></h1>
       <p>Put a nail in spreadsheet's coffin.</p>
 
       <div ng-controller="NpvCtrl">
