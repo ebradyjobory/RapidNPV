@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>RapidNPV&mdash;Free and Accurate NPV Calculator</title>
+    <title>RapidNPV&mdash;Free and Easy NPV Calculator</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/style.css">
@@ -23,7 +23,7 @@
   <body>
     <div class='container' ng-app='RapidNPV'>
       <h1 class="logo">Rapid<span>NPV</span></h1>
-      <p>Put a nail in spreadsheet's coffin.</p>
+      <p>Free and Easy NPV Calculator</p>
 
       <div ng-controller="NpvCtrl">
         <form name="npvForm" ng-submit="submitForm(npvForm.$valid)" >
@@ -57,7 +57,7 @@
       <!--   <p>An easy to understand Net Present Value (NPV) calculator for businesses and investors without the need for a complicated spreadsheet. RapidNPV instantly assesses the profitability of a potential project or investment. Three inputs are provided: costs, benefits, and the discount rate which can be adjusted for level of risk.</p> -->
   
       </div>
-      <div class="author"><a href="http://essam.io">essam.io</a></div>
+      <div class="author">Copyright &copy; 2014 - 2015 <a href="http://essam.io">Essam Al Joubori</div>
     </div>
   </body>
 </html>
